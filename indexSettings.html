@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>RescueLink Settings</title>
+</head>
+<body class="bg-red-50">
+
+<!--  HEADER  -->
+<header>
+  <nav class="bg-red-800 p-3 text-white">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <a href="indexDash.html" class="text-2xl font-bold">🚨 RescueLink</a>
+      <div class="hidden md:flex space-x-4 items-center">
+        <a href="indexDash.html" class=" hover:text-yellow-400">Dashboard</a>
+        <a href="indexProfile.html" class=" hover:text-yellow-400">Profile</a>
+        <a href="indexContact.html" class=" hover:text-yellow-400">Contact</a>
+        <a href="indexSettings.html" class="bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Settings</a>
+        <a href="indexLogout.html" class=" hover:text-yellow-400">Logout</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden flex-col space-y-2 mt-2 px-2 md:hidden">
+      <a href="indexDash.html" class="block  hover:text-yellow-400">Dashboard</a>
+      <a href="indexProfile.html" class="block  hover:text-yellow-400">Profile</a>
+      <a href="indexContact.html" class="block  hover:text-yellow-400">Contact</a>
+      <a href="indexSettings.html" class="block bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Settings</a>
+      <a href="indexLogout.html" class="block h hover:text-yellow-400">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<!--  HERO  -->
+<section class="bg-white p-4 shadow-md mt-4 max-w-7xl mx-auto rounded-lg">
+  <div class="flex flex-col md:flex-row justify-between">
+    <p class="font-bold text-red-900">Settings synced</p>
+    <p class="text-red-700 text-sm mt-2 md:mt-0">
+      Your RescueLink preferences are backed up. Changes apply to your next SOS alert immediately.
+    </p>
+  </div>
+</section>
+
+<!--  SETTINGS SECTIONS  -->
+<section class="my-8 max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-6">
+
+  <!-- Left Column -->
+  <div class="bg-white rounded-lg p-5 flex-1 shadow-lg">
+    <p class="font-bold text-lg mb-4 text-red-900">App & Security Settings</p>
+    <div class="flex justify-between items-center mb-4">
+      <p class="text-red-700">Control how RescueLink behaves on this device and how we protect your account.</p>
+      <button class="bg-red-900 text-white rounded-lg p-1 px-2">Safety first</button>
+    </div>
+
+    <p class="font-bold mb-1 text-red-900">SOS behaviour</p>
+    <p class="text-red-700">Keep emergency actions fast but deliberate.</p>
+
+    <p class="font-bold my-3">Primary SOS action</p>
+    <select class="w-full outline-1 rounded-lg p-2">
+      <option>Hold to send (recommended)</option>
+    </select>
+
+    <p class="mt-5 text-red-700 text-sm">Choose between press, double‑press, or press‑and‑hold for your main SOS button.</p>
+
+    <div class="flex flex-col md:flex-row gap-4 mt-4">
+      <div class="flex-1">
+        <p class="">Pre‑alert countdown</p>
+        <select class="w-full outline-1 rounded-lg p-2 mt-2">
+          <option>3 seconds</option>
+          <option>4 seconds</option>
+          <option>5 seconds</option>
+          <option>6 seconds</option>
+        </select>
+      </div>
+      <div class="flex-1">
+        <p class="text-red-700">Auto‑share location</p>
+        <select class="w-full outline-1 rounded-lg p-2 mt-2 ">
+          <option>Always share precise location</option>
+          <option>Never share precise location</option>
+        </select>
+      </div>
+    </div>
+
+    <p class="font-bold text-lg mt-5 text-red-900">Allow silent SOS</p>
+    <p class="text-red-700 text-sm">Send SOS without sound or vibration for discreet situations.</p>
+
+    <hr class="my-6 border-red-400">
+
+    <p class="font-bold text-lg text-red-900">Location & offline handling</p>
+    <p class="text-red-700 text-sm mt-2">Make sure we can still help when coverage is poor.</p>
+
+    <p class="mt-4 font-bold text-red-900">Background location</p>
+    <p class="text-red-700 text-sm">Share continuous location for 20 minutes after an SOS until responders arrive.</p>
+
+    <p class="mt-4 font-bold text-red-900">Offline queueing</p>
+    <p class="text-red-700 text-sm">If you lose signal, RescueLink will queue your SOS and send it once the network returns.</p>
+
+    <p class="mt-3 font-bold text-red-900">Fallback SMS region format</p>
+    <select class="w-full outline-1 rounded-lg p-2 mt-2">
+      <option>United States (+1)</option>
+    </select>
+    <p class="mt-2 text-red-700 text-sm">Used when we need to build a minimal SMS with your location link.</p>
+
+    <hr class="my-6 border-red-400">
+
+    <p class="font-bold text-lg text-red-900">Account & Security</p>
+    <p class="text-red-700 text-sm mt-2">Require a code from SMS or authenticator app when logging in from new devices.</p>
+    <p class="mt-2 text-red-700 text-sm">Use Face ID, Touch ID, or fingerprint to open the app faster.</p>
+
+    <div class="flex flex-col md:flex-row gap-4 mt-4">
+      <div class="flex-1">
+        <p class="text-red-700">Session timeout</p>
+        <select class="w-full outline-1 rounded-lg p-2 mt-2">
+          <option>30 minutes of inactivity</option>
+          <option>40 minutes of inactivity</option>
+          <option>50 minutes of inactivity</option>
+          <option>Never run out</option>
+        </select>
+      </div>
+      <div class="flex-1">
+        <p class="text-red-700">Login alerts</p>
+        <select class="w-full outline-1 rounded-lg p-2 mt-2 ">
+          <option>Notify on new device logins</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center mt-6 gap-4">
+      <p class="text-red-700 text-sm">Changes are stored on this device and in your RescueLink profile so responders always see the right information.</p>
+      <div class="flex space-x-3">
+        <button class="bg-yellow-500 hover:bg-yellow-700 hover:text-white text-black p-2 px-4 rounded-lg font-bold">Revert to defaults</button>
+        <button id="setting" class="bg-red-700 hover:bg-red-800 text-white p-2 px-4 rounded-lg">Save settings</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Column -->
+  <div class="bg-white shadow-lg rounded-lg p-5 flex-1">
+    <p class="font-bold text-lg mb-4 text-red-900">Quick presets</p>
+    <p class="text-red-700 text-sm mb-4">Switch between preset configurations for how aggressively RescueLink should act in an emergency.</p>
+
+    <div class="flex flex-wrap gap-2 mb-4">
+      <button class="bg-yellow-500 text-black px-3 py-1 rounded-lg font-bold">Standard</button>
+      <button class="bg-yellow-600 text-black px-3 py-1 rounded-lg font-bold">High caution</button>
+      <button class="bg-red-800 text-white px-3 py-1 rounded-lg font-bold">Travel mode</button>
+    </div>
+
+    <p class="mt-2 text-red-700">• Standard: Balanced speed and confirmation.</p>
+    <p class="text-red-700">• High caution: Extra confirmations to avoid false alarms.</p>
+    <p class="text-red-700">• Travel mode: Looser roaming rules and automatic location sharing.</p>
+
+    <p class="mt-5 font-bold text-red-900">Language & region</p>
+    <p class="text-red-700 text-sm">Adapt RescueLink to where you are.</p>
+
+    <div class="flex flex-col md:flex-row gap-4 mt-3">
+      <div class="flex-1">
+        <p class="font-bold text-red-900">App language</p>
+        <select class="w-full outline-1 rounded-lg p-2 mt-2 ">
+          <option>English (US)</option>
+          <option>Ewe</option>
+          <option>Ga</option>
+          <option>French</option>
+        </select>
+      </div>
+      <div class="flex-1">
+        <p class="font-bold text-red-900">Primary region</p>
+        <input type="text" placeholder="Current location (San Francisco, CA)" class="w-full mt-2 outline-1 rounded-lg p-2 ">
+      </div>
+    </div>
+
+    <p class="my-4 text-red-700 text-sm">Used to route you to the closest emergency services.</p>
+
+    <p class="font-bold text-lg text-red-900">Data & privacy</p>
+    <p class="text-red-700 text-sm my-2">Understand how we use your data to keep you safe.</p>
+    <p class="text-red-700">• Location is only shared during active alerts you trigger.</p>
+    <p class="text-red-700">• We never sell your personal or medical information.</p>
+    <p class="text-red-700">• You can export or delete your data at any time.</p>
+
+    <div class="flex flex-col md:flex-row justify-between items-center mt-5 gap-4">
+      <p class="font-bold text-red-800">Danger zone</p>
+      <div class="flex space-x-2">
+        <button class="border text-red-800 p-1 px-2 hover:bg-red-800 hover:text-white rounded-lg font-bold">Sign out of all devices</button>
+        <button class="border text-red-800 p-1 px-2 hover:bg-red-800 hover:text-white rounded-lg font-bold">Export my data</button>
+        <button class="border text-red-800 p-1 px-2 hover:bg-red-800 hover:text-white rounded-lg font-bold">Request account deletion</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  MOBILE MENU SCRIPT  -->
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>
+
+<!-- alert -->
+ <script src="index.js"></script>
+
+</body>
+</html>

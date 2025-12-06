@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Health SOS</title>
+</head>
+
+<body class="bg-gray-900">
+
+    <!-- NAVBAR -->
+    <nav class="bg-red-800 p-3 text-white shadow-lg flex items-center justify-between">
+        <h1 class="text-xl font-bold">🚨 RescueLink</h1>
+
+        <!-- Hamburger -->
+        <button id="menu-btn" class="text-2xl md:hidden">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-sm">
+            <li><a href="indexDash.html" class="hover:text-yellow-300">Dashboard</a></li>
+            <li><a href="indexQuickSos.html" class="hover:text-yellow-300">Emergency</a></li>
+            <li><a href="indexSignUp.html" class="hover:text-yellow-300">Settings</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden bg-red-700 text-white p-4 md:hidden">
+        <ul class="space-y-3 text-sm">
+            <li><a href="indexDash.html" class="block hover:bg-yellow-300 hover:text-red-800 p-2 rounded">Dashboard</a></li>
+            <li><a href="indexQuickSos.html" class="block hover:bg-yellow-300 hover:text-red-800 p-2 rounded">Emergency</a></li>
+            <li><a href="indexSettings.html" class="block hover:bg-yellow-300 hover:text-red-800 p-2 rounded">Settings</a></li>
+        </ul>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <section class="flex justify-center px-4 mt-10 mb-10">
+        <div class="bg-white rounded-lg max-w-lg w-full p-6 shadow-lg">
+
+            <h3 class="bg-red-800 text-white rounded-lg p-2 w-48 text-center text-sm">
+                Health Emergency
+            </h3>
+
+            <p class="my-3 font-bold text-2xl text-red-700">Send health SOS now?</p>
+
+            <p class="text-sm mb-4 text-red-800">
+                We will alert medical responders and your trusted contacts  
+                with your live location.
+            </p>
+
+            <p class="font-medium text-red-700">What we will share</p>
+
+            <div class="flex flex-wrap gap-2 mt-2">
+                <button class="bg-red-700 text-white p-1 px-3 rounded-lg text-xs">Your live location</button>
+                <button class="bg-red-700 text-white p-1 px-3 rounded-lg text-xs">Medical profile</button>
+                <button class="bg-red-700 text-white p-1 px-3 rounded-lg text-xs">Emergency contacts</button>
+            </div>
+
+            <p class="mt-4 font-medium text-red-700">Nearest Hospital</p>
+            <p class="text-sm text-yellow-500">
+                St. Mary's Hospital — Approx. 1.4 km (ETA 4 - 7 minutes)
+            </p>
+
+            <p class="bg-yellow-200 p-3 rounded-lg mt-4 text-sm text-red-800">
+                If your connection drops, we will queue this alert and send it automatically as soon as you are back online.
+            </p>
+
+            <div class="text-right mt-6 space-x-2">
+                <a href="indexDash.html"><button class="bg-yellow-500 text-red-800 border px-5 py-2 rounded-lg hover:bg-yellow-600">Cancel</button></a>
+                <a href="indexHealthTrack.html">
+                    <button class="bg-red-800 text-white px-5 py-2 rounded-lg hover:bg-red-900">
+                        Send Health SOS
+                    </button>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPT FOR MOBILE MENU -->
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

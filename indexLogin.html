@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>RescueLink Login</title>
+</head>
+<body class="bg-red-50">
+
+    <!--  NAVBAR  -->
+    <header class="bg-red-800 p-3 text-white ">
+        <nav class="flex items-center justify-between max-w-7xl mx-auto">
+            <a href="index.html" class="text-2xl md:text-3xl font-bold text-white">🚨 RescueLink</a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-4">
+                <a href="indexLogin.html" class="bg-yellow-300 text-black shadow-md px-5 py-2 rounded-lg hover:bg-yellow-500">Login</a>
+                <a href="indexSignUp.html" class=" bg-red-900 text-white hover:text-black shadow-md px-5 py-2 rounded-lg hover:bg-yellow-300">Sign up</a>
+            </div>
+
+            <!-- Hamburger for mobile -->
+            <button id="menu-btn" class="md:hidden text-2xl text-white">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex-col space-y-2 px-4 pb-4 md:hidden">
+            <a href="indexLogin.html" class="block bg-yellow-400  px-5 py-2 rounded-lg hover:bg-yellow-500">Login</a>
+            <a href="indexSignUp.html" class="block bg-red-900 text-white hover:text-black px-5 py-2 rounded-lg hover:bg-yellow-300">Sign up</a>
+        </div>
+    </header>
+
+    <!--  LOGIN FORM  -->
+    <section class="p-4">
+        <div class="bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto mt-10">
+            <h1 class="text-2xl font-bold text-center text-red-800">Welcome back</h1>
+            <p class="my-2 text-center text-red-600">Log in so you can trigger SOS in seconds when it matters.</p>
+
+            <div class="flex justify-center space-x-4 mb-6">
+                <a href="indexLogin.html"><button class="bg-red-900 shadow-md text-white px-6 py-2 rounded-lg hover:bg-red-700">Login</button></a>
+                <a href="indexSignUp.html"><button class=" shadow-md text-red-800 px-6 py-2 rounded-lg hover:bg-yellow-300">Sign up</button></a>
+            </div>
+
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-red-800">Email</label>
+                    <input type="email" placeholder="James@gmail.com" required class="w-full p-2 rounded-lg border-2 border-red-300 focus:border-red-700 outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-red-800">Password</label>
+                    <input type="password" placeholder="Your password" required class="w-full p-2 rounded-lg border-2 border-red-300 focus:border-red-700 outline-none">
+                </div>
+
+                <p class="text-center text-red-600 text-sm">Use the password you created for RescueLink</p>
+
+                <a href="indexDash.html">
+                    <button type="button" class="w-full bg-red-800 text-white py-2 rounded-lg font-bold hover:bg-red-700">Continue</button>
+                </a>
+            </form>
+
+            <!-- Links -->
+            <div class="flex justify-between mt-4 text-sm">
+                <p class="text-red-700">Forgot password?</p>
+                <a href="#"><p class="text-yellow-400 font-semibold">Reset it</p></a>
+            </div>
+
+            <div class="flex justify-between mt-2 text-sm">
+                <p class="text-red-700">New to RescueLink?</p>
+                <a href="indexSignUp.html"><p class="text-yellow-400 font-semibold">Create an account</p></a>
+            </div>
+
+            <p class="mt-6 text-center text-xs text-red-600">
+                Secure login. Your location and medical details are stored securely and only shared with responders and contacts during an active SOS.
+            </p>
+        </div>
+    </section>
+
+    <!--  MOBILE MENU SCRIPT  -->
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

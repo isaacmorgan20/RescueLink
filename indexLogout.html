@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Logout - RescueLink</title>
+</head>
+<body class="bg-gray-900 min-h-screen">
+
+    <!--  NAVBAR  -->
+    <header class="bg-red-800 p-3 text-white">
+        <nav class="flex items-center justify-between max-w-7xl mx-auto">
+            <a href="indexDash.html" class="text-xl md:text-2xl font-bold">🚨 RescueLink</a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="indexDash.html" class="px-4 hover:text-yellow-400">Dashboard</a>
+                <a href="indexProfile.html" class="hover:text-yellow-400">Profile</a>
+                <a href="indexContact.html" class="px-4 hover:text-yellow-400">Contact</a>
+                <a href="indexSettings.html" class="px-4 hover:text-yellow-400">Settings</a>
+                <a href="indexLogout.html" class="bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Logout</a>
+            </div>
+
+            <!-- Hamburger for mobile -->
+            <button id="menu-btn" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex-col space-y-2 px-4 pb-4 md:hidden bg-red-900">
+            <a href="indexDash.html" class="block hover:text-yellow-400">Dashboard</a>
+            <a href="indexProfile.html" class="block hover:text-yellow-400">Profile</a>
+            <a href="indexContact.html" class="block hover:text-yellow-400">Contact</a>
+            <a href="indexSettings.html" class="block hover:text-yellow-400">Settings</a>
+            <a href="indexLogout.html" class="block bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Logout</a>
+        </div>
+    </header>
+
+    <!--  LOGOUT SECTION  -->
+    <section class="p-4">
+        <div class="bg-red-100 rounded-lg p-6 max-w-md mx-auto mt-10">
+            <p class="font-bold text-lg text-red-900">RescueLink</p>
+            <p class="my-3 text-lg text-red-800">Log out of RescueLink?</p>
+            <p class="text-sm text-red-700">You’ll be signed out on this device. Your active SOS settings and emergency contacts stay saved to your account.</p>
+
+            <p class="text-red-900 font-bold mt-4">Before you log out</p>
+            <ul class="list-disc list-inside text-sm text-red-700 space-y-1 mt-1">
+                <li>You won’t be able to trigger SOS from this device until you log in again.</li>
+                <li>Any in‑progress alerts will keep running and responders stay updated.</li>
+                <li>You can log back in at any time to regain full access.</li>
+            </ul>
+
+            <p class="my-5 text-sm text-red-700">Need to secure your account? Use “Sign out of all devices” from Settings next time.</p>
+
+            <div class="flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-4 mt-4">
+                <a href="indexDash.html"><button class="bg-yellow-400 hover:text-white hover:bg-yellow-600 rounded-lg p-2 px-5 w-full md:w-auto text-black font-bold">Cancel</button></a>
+                <a href="index.html"><button class="bg-red-800 hover:bg-red-500 rounded-lg p-2 px-5 text-white w-full md:w-auto">Log out</button></a>
+            </div>
+        </div>
+    </section>
+
+    <!--  MOBILE MENU SCRIPT  -->
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

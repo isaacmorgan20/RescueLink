@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Profile - RescueLink</title>
+</head>
+<body class="bg-red-50">
+
+<!--  HEADER / NAVBAR  -->
+<header>
+  <nav class="bg-red-800 p-3 text-white">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <!-- Logo -->
+      <a href="indexDash.html" class="text-2xl font-bold">🚨 RescueLink</a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-4 items-center">
+        <a href="indexDash.html" class="hover:text-yellow-400">Dashboard</a>
+        <a href="indexProfile.html" class="bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Profile</a>
+        <a href="indexContact.html" class="hover:text-yellow-400">Contact</a>
+        <a href="indexSettings.html" class="hover:text-yellow-400">Settings</a>
+        <a href="indexLogout.html" class="hover:text-yellow-400">Logout</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col space-y-2 mt-2 px-2 md:hidden">
+      <a href="indexDash.html" class="block hover:text-yellow-400">Dashboard</a>
+      <a href="indexProfile.html" class="block bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Profile</a>
+      <a href="indexContact.html" class="block hover:text-yellow-400">Contact</a>
+      <a href="indexSettings.html" class="block hover:text-yellow-400">Settings</a>
+      <a href="indexLogout.html" class="block hover:text-yellow-400">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<!--  HERO / STATUS  -->
+<section class="bg-white p-4 mt-4 max-w-7xl shadow-md mx-auto rounded-lg">
+  <div class="flex flex-col md:flex-row justify-between">
+    <p class="font-bold text-red-900">Profile & medical info up to date</p>
+    <p class="text-red-700 text-sm mt-2 md:mt-0">Keep this information accurate</p>
+  </div>
+</section>
+
+<!--  PROFILE FORM  -->
+<section class="my-8 max-w-7xl mx-auto px-4">
+  <div class="flex flex-col lg:flex-row gap-6">
+    
+    <!-- Left Column -->
+    <div class="bg-white shadow-lg p-4 rounded-lg flex-1">
+      <p class="text-xl font-bold mb-4 text-red-900">Your profile</p>
+      <p class="text-red-700 text-sm mb-2">Basic details and critical medical information shared with responders when you trigger SOS.</p>
+      <button class="bg-red-800 text-white text-sm px-3 py-1 rounded-lg mb-4">Encrypted & private</button>
+
+      <div class="flex flex-col md:flex-row gap-6">
+        <!-- Personal Details -->
+        <div class="flex-1">
+          <p class="font-semibold mb-2 text-red-900">Personal details</p>
+          <form class="space-y-3">
+            <div>
+              <label class="text-red-800">Full name</label>
+              <input type="text" required placeholder="Alex Chen" class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Mobile number</label>
+              <p class="text-red-700 text-sm">Used for verification & callbacks</p>
+              <input type="tel" required placeholder="+1 ••• ••• ••21" class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Home address</label>
+              <p class="text-red-700 text-sm">Optional</p>
+              <input type="text" placeholder="Street, building, apartment · Helps responders if GPS is weak indoors." class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Emergency language</label>
+              <p class="text-red-700 text-sm">Preferred language</p>
+              <input type="text" required placeholder="English, Secondary: Spanish" class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+          
+        </div>
+
+        <!-- Medical Information -->
+        <div class="flex-1">
+          <p class="font-semibold mb-2 text-red-900">Medical information</p>
+          
+            <div>
+              <label class="text-red-800">Blood group</label>
+              <p class="text-red-700 text-sm">Recommended</p>
+              <input type="text" required placeholder="O+ (Unknown)" class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Allergies</label>
+              <p class="text-red-700 text-sm">Optional</p>
+              <input type="text" placeholder="e.g. Penicillin, nuts, shellfish, latex. “No known allergies” if none." class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Existing conditions</label>
+              <p class="text-red-700 text-sm">Optional</p>
+              <input type="text"  placeholder="e.g. Asthma, diabetes, heart condition, epilepsy." class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Medications</label>
+              <p class="text-red-700 text-sm">Optional</p>
+              <input type="text" placeholder="Regular medications or anything responders should know." class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+
+            <div>
+              <label class="text-red-800">Additional notes</label>
+              <p class="text-red-700 text-sm">Optional</p>
+              <input type="text" placeholder="Anything else responders should know." class="w-full p-2 mt-1 rounded-lg border border-red-400">
+            </div>
+         
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-col md:flex-row justify-between items-center mt-5 gap-2">
+        <p class="text-sm text-red-700">This information appears only to verified responders and your selected contacts when you send an SOS.</p>
+        <div class="flex gap-2">
+          <a href="indexDash.html"><button type="button"  class="bg-yellow-400 hover:bg-yellow-700 hover:text-white text-black px-4 py-2 rounded-lg font-bold">Cancel</button></a>
+          <a href="indexDash.html"><button type="submit" class="bg-red-700 hover:bg-red-500 text-white px-4 py-2 rounded-lg">Save changes</button></a>
+        </div>
+      </div>
+       </form>
+    </div>
+
+    <!-- Right Column -->
+    <div class="bg-white shadow-lg p-5 rounded-lg flex-1">
+      <p class="font-bold mb-2 text-red-900">How this is used</p>
+      <p class="text-red-700 text-sm mb-3">When you trigger SOS, key medical details are shared along with your name and live location.</p>
+      <ul class="list-disc list-inside text-sm mb-3 text-red-700">
+        <li>Helps paramedics prepare before arrival</li>
+        <li>Reduces delays from repeated questions</li>
+        <li>Can be critical if you’re unable to speak</li>
+      </ul>
+
+      <p class="font-bold mb-2 text-red-900">Who can see this</p>
+      <ul class="list-disc list-inside text-sm mb-3 text-red-700">
+        <li>Verified emergency responders</li>
+        <li>On-duty RescueLink operators</li>
+        <li>Your selected emergency contacts (limited view)</li>
+      </ul>
+
+      <p class="font-bold mb-2 text-red-900">Tip: keep it focused</p>
+      <p class="text-red-700 text-sm mb-3">Share only what’s relevant in an emergency. You can update or remove details at any time.</p>
+
+      <div class="flex flex-wrap gap-2 text-sm">
+        <button class="bg-yellow-400 text-black px-2 py-1 rounded-lg">Life‑critical only</button>
+        <button class="bg-yellow-400 text-black px-2 py-1 rounded-lg">Update after major changes</button>
+        <button class="bg-yellow-400 text-black px-2 py-1 rounded-lg">No advertising use</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  MOBILE MENU SCRIPT  -->
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>
+
+</body>
+</html>

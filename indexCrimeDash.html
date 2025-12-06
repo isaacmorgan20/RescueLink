@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>RescueLink Fire SOS</title>
+</head>
+<body class="bg-gray-200">
+
+<!-- NAVBAR -->
+<header class="bg-red-800 text-white p-3">
+    <nav class="flex justify-between items-center">
+
+        <!-- Logo -->
+        <div class="flex items-center space-x-3">
+            <a href="indexDash.html" class="font-bold text-2xl tracking-tight">🚨 RescueLink</a>
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8">
+            <a href="indexDash.html" class="hover:text-yellow-300">Dashboard</a>
+            <a href="indexProfile.html" class="hover:text-yellow-300">Profile</a>
+            <a href="indexContact.html" class="hover:text-yellow-300">Contact</a>
+            <a href="indexSettings.html" class="hover:text-yellow-300">Settings</a>
+            <a href="indexLogout.html" class="hover:text-yellow-300">Logout</a>
+
+            <!-- Profile -->
+            <div class="flex items-center space-x-2">
+                <p>Alex Chen</p>
+                <img src="https://app.banani.co/avatar2.jpg" class="w-7 h-7 rounded-full object-cover">
+            </div>
+        </div>
+
+        <!-- Hamburger -->
+        <button id="hamburger" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden flex-col bg-red-700 rounded-lg mt-3 p-3 space-y-2 md:hidden">
+        <a href="indexDash.html" class="text-white hover:text-yellow-300">Dashboard</a>
+        <a href="indexProfile.html" class="text-white hover:text-yellow-300">Profile</a>
+        <a href="indexContact.html" class="text-white hover:text-yellow-300">Contact</a>
+        <a href="indexSettings.html" class="text-white hover:text-yellow-300">Settings</a>
+        <a href="indexLogout.html" class="text-white hover:text-yellow-300">Logout</a>
+
+        <div class="flex items-center space-x-2 pt-2 border-t border-yellow-400">
+            <p>Alex Chen</p>
+            <img src="https://app.banani.co/avatar2.jpg" class="w-7 h-7 rounded-full object-cover">
+        </div>
+    </div>
+</header>
+<!-- END NAV -->
+
+<!-- HERO SECTION -->
+<section class="px-4">
+    <div class="flex flex-col md:flex-row bg-red-700 text-white p-3 mt-5 justify-between rounded-lg">
+        <div>
+            <p class="font-bold">Fire SOS is active</p>
+            <p class="text-sm">SOS sent at 14:03 • Location sharing is live with fire responders and your contacts.</p>
+        </div>
+        <div class="mt-3 md:mt-0">
+            <p class="bg-red-900 p-1 px-3 rounded-lg text-sm text-white">Ref: RL-29F8</p>
+        </div>
+    </div>
+</section>
+
+<!-- STATUS BAR -->
+<section class="bg-yellow-400 p-3 mt-4 rounded-lg mx-4 text-red-800">
+    <div class="flex flex-col md:flex-row justify-between">
+        <p class="font-bold">System status: Online</p>
+        <p class="text-sm mt-2 md:mt-0">If you are now safe, you can cancel the SOS below.</p>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="px-4 my-8">
+    <div class="flex flex-col lg:flex-row gap-5">
+
+        <!-- LEFT CARD -->
+        <div class="bg-white p-5 rounded-lg w-full">
+            <p class="font-bold text-lg text-red-700">Status & timeline</p>
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-2">
+                <p class="text-sm">We’re coordinating with nearby fire responders.</p>
+                <div class="flex space-x-2 mt-2 md:mt-0 text-sm">
+                    <button class="bg-red-700 text-white p-1 px-2 rounded-lg font-bold">Fire emergency</button>
+                    <button class="bg-gray-900 p-1 px-2 text-white rounded-lg">High priority</button>
+                </div>
+            </div>
+
+            <!-- TIMELINE -->
+            <div class="mt-5 space-y-5">
+                <div>
+                    <p class="font-bold text-red-700">Alert sent</p>
+                    <p class="text-gray-600 text-sm">14:03 • Your fire SOS was created.</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-red-700">Location shared</p>
+                    <p class="text-gray-600 text-sm">14:03 • Live GPS shared with local fire dispatch and contacts.</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-red-700">Responder notified</p>
+                    <p class="text-gray-600 text-sm">14:04 • Nearest fire responder accepted your alert.</p>
+                </div>
+
+                <div>
+                    <p class="font-bold text-red-700">On the way</p>
+                    <p class="text-gray-600 text-sm">ETA will update in real time as they approach.</p>
+                </div>
+            </div>
+
+            <!-- NOTIFIED LIST -->
+            <p class="mt-6 mb-2 font-semibold text-red-700">Who has been notified</p>
+
+            <div class="space-y-3">
+                <!-- 1 -->
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <button class="bg-red-700 text-white p-1 px-1 w-7 rounded-lg">H</button>
+                        <div class="text-sm">
+                            <p>Central Fire Dispatch</p>
+                            <p class="text-gray-600">Official responder</p>
+                        </div>
+                    </div>
+                    <button class="bg-yellow-600 text-white rounded-lg p-1 px-5 text-sm">En route</button>
+                </div>
+
+                <!-- 2 -->
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-sm text-red-700"></i>
+                        <div class="text-sm">
+                            <p>Maria Lopez</p>
+                            <p class="text-gray-600">Emergency contact</p>
+                        </div>
+                    </div>
+                    <button class="bg-yellow-600 text-white rounded-lg p-1 px-5 text-sm">Notified</button>
+                </div>
+
+                <!-- 3 -->
+                <div class="flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-person text-sm text-red-700"></i>
+                        <div class="text-sm">
+                            <p>Family group</p>
+                            <p class="text-gray-600">WhatsApp group</p>
+                        </div>
+                    </div>
+                    <button class="bg-yellow-600 text-white rounded-lg p-1 px-5 text-sm">Pending read</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="bg-white p-5 rounded-lg w-full">
+            <p class="font-bold text-lg text-red-700">Live location & route</p>
+            <p class="text-sm mb-3">We’ve shared a live map with responders. Stay where you are if safe.</p>
+
+            <div class="flex flex-col md:flex-row justify-between mb-3">
+                <div class="flex items-center space-x-2">
+                    <button class="text-white bg-red-700 p-1 px-2 rounded-lg text-sm font-bold">Live tracking</button>
+                    <p class="text-sm">Updated just now</p>
+                </div>
+                <p class="text-sm mt-2 md:mt-0">Tap markers to describe your situation out loud.</p>
+            </div>
+
+            <img src="https://app.banani.co/map.png" class="rounded-lg w-full">
+
+            <div class="flex text-sm space-x-4 my-1">
+                <p>You</p>
+                <p>Responder</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between mt-2 text-sm">
+                <p>Responder is on the way<br>Approx. 3.2 km • ETA 7–9 minutes</p>
+                <p class="mt-2 md:mt-0">Your contacts receive live audio & SMS updates.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER ACTION BAR -->
+<section class="px-4 mt-5 mb-10">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-3">
+
+        <p class="text-center md:text-left text-red-700">
+            Only cancel if you are safe and no longer need assistance.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-3">
+            <button class="bg-yellow-400 text-red-700 rounded-lg p-2 px-5 font-bold">
+                Cancel SOS (I am safe)
+            </button>
+
+            <button class="bg-red-700 text-white p-2 px-5 rounded-lg font-bold">
+                View full incident details
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- MOBILE MENU SCRIPT -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+});
+</script>
+
+</body>
+</html>

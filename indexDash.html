@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>RescueLink</title>
+
+<style>
+    .mobile-menu { display: none; }
+    .mobile-menu.show { display: block; }
+</style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- NAVBAR -->
+<header>
+    <nav class="bg-red-800 p-3 text-white">
+
+        <div class="flex justify-between items-center">
+            <!-- LOGO -->
+            <a href="#"><p class="font-bold text-2xl tracking-tight">🚨 RescueLink</p></a>
+
+            <!-- DESKTOP MENU -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="indexDash.html" class="bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Dashboard</a>
+                <a href="indexProfile.html" class="hover:text-yellow-400">Profile</a>
+                <a href="indexContact.html" class="hover:text-yellow-400">Contact</a>
+                <a href="indexSettings.html" class="hover:text-yellow-400">Settings</a>
+                <a href="indexLogout.html" class="hover:text-yellow-400">Logout</a>
+            </div>
+
+            <!-- MOBILE BUTTON -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobileMenu" class="mobile-menu md:hidden bg-red-700 mt-3 p-3 rounded-lg space-y-3">
+            <a href="indexDash.html" class="block bg-red-900 p-2 rounded hover:bg-yellow-400 hover:text-red-800">Dashboard</a>
+            <a href="indexProfile.html" class="block hover:text-yellow-400">Profile</a>
+            <a href="indexContact.html" class="block hover:text-yellow-400">Contact</a>
+            <a href="indexSettings.html" class="block hover:text-yellow-400">Settings</a>
+            <a href="indexLogout.html" class="block hover:text-yellow-400">Logout</a>
+        </div>
+
+    </nav>
+</header>
+
+<!-- STATUS BAR -->
+<section class="bg-yellow-400 text-red-800 mt-5 mx-5 p-3 rounded-lg">
+    <div class="flex flex-col lg:flex-row justify-between">
+        <div>
+            <p class="font-bold">System status: Online</p>
+            <p class="text-sm">Your SOS will send immediately & share live location</p>
+        </div>
+        <p class="text-sm mt-2 lg:mt-0">Last sync: Just now</p>
+    </div>
+</section>
+
+<!-- MAIN SECTION -->
+<section class="bg-gray-100 p-6">
+
+    <div class="flex flex-col lg:flex-row justify-center gap-7">
+
+        <!-- LEFT CARD -->
+        <div class="bg-white rounded-lg p-5 w-full lg:w-1/2 shadow-lg">
+            <p class="font-bold text-2xl text-red-700">Trigger SOS</p>
+            <p class="text-sm my-3 text-red-800">
+                Hold the button if you are in danger. We will notify responders and your trusted contacts.
+            </p>
+
+            <!-- SOS BUTTON -->
+            <div class="flex justify-center my-6">
+                <a href="indexQuickSos.html">
+                    <button class="bg-red-700 rounded-full w-48 h-48 text-white text-xl font-bold shadow-lg hover:bg-red-900">
+                        Hold to send SOS
+                    </button>
+                </a>
+            </div>
+
+            <!-- QUICK-TYPE BUTTONS -->
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="indexHealthCom.html">
+                    <button class="bg-red-700 text-white p-2 px-5 rounded-lg hover:bg-yellow-400 hover:text-red-800">Health</button>
+                </a>
+                <a href="indexFire.html">
+                    <button class="bg-red-700 text-white p-2 px-5 rounded-lg hover:bg-yellow-400 hover:text-red-800">Fire</button>
+                </a>
+                <a href="indexCrime.html">
+                    <button class="bg-red-700 text-white p-2 px-5 rounded-lg hover:bg-yellow-400 hover:text-red-800">Crime</button>
+                </a>
+                <a href="indexOther.html">
+                    <button class="bg-gray-300 text-gray-700 p-2 px-5 rounded-lg hover:bg-yellow-400 hover:text-red-800">Other</button>
+                </a>
+            </div>
+
+            <!-- STEPS -->
+            <div class="text-sm mt-6 text-red-800">
+                <p>Step 1: Choose the closest category.</p>
+                <p>Step 2: Hold the SOS button for two seconds to confirm.</p>
+                <p class="mt-3 text-gray-500">
+                    If you go offline, your alert will queue and send automatically once network returns.
+                </p>
+            </div>
+        </div>
+
+        <!-- RIGHT CARD -->
+        <div class="bg-white rounded-lg p-5 w-full lg:w-1/2 shadow-lg">
+            <p class="font-bold text-2xl text-red-700">Your current location</p>
+            <p class="my-4 text-red-800">We use this location to route responders and notify nearby services.</p>
+
+            <img src="https://app.banani.co/api/flow-image/city%20emergency%20map"
+                 class="w-full h-64 rounded-lg object-cover border-2 border-red-700">
+
+            <p class="text-sm mt-4 text-red-700">Approximate address</p>
+            <p class="text-sm mb-5 text-red-800">221B Barker Street, Marylebone, London</p>
+
+            <!-- INFO BOXES -->
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="bg-red-700 text-white p-3 rounded-lg text-center flex-1">
+                    <p>Nearby Hospital</p>
+                    <p>Later</p>
+                </div>
+
+                <div class="bg-red-700 text-white p-3 rounded-lg text-center flex-1">
+                    <p>Estimated response time</p>
+                    <p>4 - 7 minutes</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOTTOM AREA -->
+    <div class="flex flex-col lg:flex-row justify-center gap-7 mt-7">
+
+        <!-- RECENT ALERTS -->
+        <div class="bg-white rounded-lg p-5 w-full lg:w-1/2 shadow-lg">
+            <p class="text-xl font-bold text-red-700">Recent alerts</p>
+            <p class="text-sm mt-2 text-red-800">You have no active SOS. If you trigger one, you will see updates here.</p>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="flex flex-col gap-3 w-full lg:w-1/2">
+            <button id="later" class="bg-yellow-400 text-red-800 rounded-lg p-3 hover:bg-yellow-500">
+                View profile & medical info
+            </button>
+            <button id="coming" class="bg-red-700 text-white p-3 rounded-lg hover:bg-red-900">
+                Manage emergency contacts
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SCRIPT  -->
+<script>
+    document.getElementById("menu-btn").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("show");
+    });
+</script>
+
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Other SOS - RescueLink</title>
+</head>
+<body class="bg-gray-200">
+
+<!--  HEADER / NAVBAR  -->
+<header>
+  <nav class="bg-red-800 p-3 text-white">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <!-- Logo -->
+      <a href="indexDash.html" class="text-2xl font-bold">🚨 RescueLink</a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-4 items-center">
+        <a href="indexDash.html" class="hover:text-yellow-300">Dashboard</a>
+        <a href="indexProfile.html" class="hover:text-yellow-300">Profile</a>
+        <a href="indexContact.html" class="hover:text-yellow-300">Contact</a>
+        <a href="indexSignUp.html" class="hover:text-yellow-300">Settings</a>
+        <a href="indexLogout.html" class="hover:text-yellow-300">Logout</a>
+        <div class="flex items-center space-x-2 ml-4">
+          <p>Alex Chen</p>
+          <img src="https://app.banani.co/avatar2.jpg" alt="" class="w-6 h-6 rounded-full object-cover">
+        </div>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col space-y-2 mt-2 px-2 md:hidden">
+      <a href="indexDash.html" class="block hover:text-yellow-300">Dashboard</a>
+      <a href="indexProfile.html" class="block hover:text-yellow-300">Profile</a>
+      <a href="indexContact.html" class="block hover:text-yellow-300">Contact</a>
+      <a href="indexSettings.html" class="block hover:text-yellow-300">Settings</a>
+      <a href="indexLogout.html" class="block hover:text-yellow-300">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<!--  HERO / STATUS  -->
+<section class="bg-white shadow-sm p-4 mt-4 max-w-7xl mx-auto rounded-lg">
+  <div class="flex flex-col md:flex-row justify-between">
+    <p class="font-bold text-red-900">System status: Online</p>
+    <p class="text-red-700 text-sm mt-2 md:mt-0">Choose details for your Other emergency before sending SOS.</p>
+  </div>
+</section>
+
+<!--  OTHER SOS FORM  -->
+<section class="my-8 max-w-7xl mx-auto px-4">
+  <div class="flex flex-col lg:flex-row gap-6">
+    <!-- Left Column -->
+    <div class="bg-white shadow-lg p-4 rounded-lg flex-1">
+      <p class="font-bold text-2xl my-3 text-red-900">Confirm Other SOS</p>
+      <p class="text-red-700 text-sm mb-4">This SOS is for situations that don’t clearly fit Fire, Health, or Crime. We will still share your location and notify responders and your trusted contacts.</p>
+
+      <p class="bg-red-900 text-white p-2 text-sm my-4 rounded-lg text-center">Other emergency</p>
+      
+      <div class="bg-red-700 p-4 rounded-lg text-center text-white mb-4">
+        <p class="mt-2 text-yellow-200">Hold to send</p>
+        <p class="mt-2 font-bold text-2xl">Send Other SOS</p>
+        <p class="mt-2 text-yellow-200 text-sm">Long-press on your phone to confirm</p>
+      </div>
+
+      <p class="mt-3 text-red-700 text-sm">On mobile, you’ll be asked to hold the SOS button for 3 seconds to avoid accidental triggers.</p>
+
+      <p class="my-3 text-red-700 text-sm">Add a short note (optional)</p>
+      <textarea placeholder="What’s happening? Optional · 120 characters max" class="w-full h-32 p-3 border rounded-lg border-red-700"></textarea>
+
+      <div class="flex flex-col sm:flex-row justify-center mt-4 gap-2">
+        <a href="indexDash.html"><button class="bg-yellow-400 hover:bg-yellow-900 hover:text-white text-black p-2 px-4 rounded-lg w-full sm:w-auto font-bold">Back to Dashboard</button></a>
+        <button class="bg-red-700 text-white p-2 px-4 rounded-lg w-full sm:w-auto hover:bg-red-500">Send Other SOS</button>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="bg-white shadow-lg p-5 rounded-lg flex-1">
+      <p class="font-bold my-3 text-red-900">Who will be notified</p>
+      <p class="text-red-700 text-sm">We send your SOS to the nearest available responder type and your saved contacts.</p>
+      <ul class="mt-3 list-disc list-inside text-sm space-y-1 text-red-700">
+        <li>RescueLink emergency network (closest match based on your location)</li>
+        <li>Your top 3 trusted contacts</li>
+        <li>Any configured local hotlines (where supported)</li>
+      </ul>
+
+      <div class="my-3 flex flex-wrap gap-2 text-sm">
+        <button class="bg-yellow-400 p-2 px-4 rounded-lg text-black">Jordan · Trusted contact</button>
+        <button class="bg-yellow-400 p-2 px-4 rounded-lg text-black">Family group</button>
+        <button class="bg-yellow-400 p-2 px-4 rounded-lg text-black">Local responder</button>
+      </div>
+
+      <p class="mt-5 font-bold text-lg text-red-900">Tips for Other emergencies</p>
+      <ul class="list-disc list-inside text-sm mt-2 space-y-1 text-red-700">
+        <li>Move to a lit, public area if you can do so safely.</li>
+        <li>Keep your phone accessible in case responders call.</li>
+        <li>Avoid sharing details in chat with strangers; wait for verified responders.</li>
+      </ul>
+
+      <p class="mt-4 font-bold text-lg text-red-900">Data & privacy</p>
+      <p class="text-red-700 text-sm mt-1">Your live location and SOS details are only visible to verified responders and the contacts you choose. Data is encrypted in transit.</p>
+
+      <div class="flex flex-col md:flex-row justify-between items-center mt-4 bg-yellow-500 rounded-lg p-3 text-sm gap-2">
+        <p>Offline? We’ll queue your Other SOS and send it automatically once you’re back online.</p>
+        <button class="border p-2 px-4 rounded-lg text-red-800">View offline behavior</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  MOBILE MENU SCRIPT  -->
+<script>
+  const btn = document.getElementById("menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Fire SOS</title>
+</head>
+<body class="bg-gray-900">
+
+    <!-- NAVBAR -->
+    <header class="bg-red-800 p-3 text-white">
+        <nav class="flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold tracking-tight">🚨 RescueLink</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="indexDash.html" class="hover:text-yellow-400">Dashboard</a>
+                <a href="indexProfile.html" class="hover:text-yellow-400">Profile</a>
+                <a href="indexContact.html" class="hover:text-yellow-400">Contact</a>
+                <a href="indexSettings.html" class="hover:text-yellow-400">Settings</a>
+                <a href="indexLogout.html" class="hover:text-yellow-400">Logout</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button 
+                id="menu-btn"
+                class="md:hidden text-2xl focus:outline-none"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex-col space-y-2 mt-3 md:hidden bg-red-700 p-4 rounded-lg">
+            <a href="indexDash.html" class="block hover:bg-yellow-400 hover:text-red-800 p-2 rounded">Dashboard</a>
+            <a href="indexProfile.html" class="block hover:bg-yellow-400 hover:text-red-800 p-2 rounded">Profile</a>
+            <a href="indexContact.html" class="block hover:bg-yellow-400 hover:text-red-800 p-2 rounded">Contact</a>
+            <a href="indexSettings.html" class="block hover:bg-yellow-400 hover:text-red-800 p-2 rounded">Settings</a>
+            <a href="indexLogout.html" class="block hover:bg-yellow-400 hover:text-red-800 p-2 rounded">Logout</a>
+        </div>
+    </header>
+    <!-- END NAV -->
+
+    <!-- MAIN SECTION -->
+    <section class="p-4 md:p-10 flex justify-center">
+        <div class="bg-white rounded-lg p-5 w-full md:w-2/3 lg:w-1/2 shadow-lg">
+            <p class="text-xl font-bold text-red-700">Send a fire SOS?</p>
+            <p class="text-red-800 mb-3">We’ll alert nearby fire responders and your emergency contacts, and share your live location.</p>
+
+            <!-- Buttons -->
+            <div class="flex space-x-4 text-sm my-3">
+                <button class="bg-red-700 text-white p-1 px-3 rounded-lg hover:bg-yellow-400 hover:text-red-800">Fire emergency</button>
+                <button class="bg-red-700 text-white p-1 px-3 rounded-lg hover:bg-yellow-400 hover:text-red-800">High priority</button>
+            </div>
+
+            <p class="mb-2 text-red-800">By sending a fire SOS, RescueLink will:</p>
+            <ul class="text-red-700 space-y-1 mb-3">
+                <li>• Notify the nearest fire response center with your current location.</li>
+                <li>• Alert your chosen emergency contacts by SMS and email.</li>
+                <li>• Keep your location updating in real time as you move.</li>
+            </ul>
+
+            <p class="mb-5 text-red-700">No signal? If you’re offline, your SOS will be queued and sent automatically as soon as your connection returns.</p>
+
+            <!-- Buttons -->
+            <div class="my-5 space-y-4 lg:space-y-7">
+                <a href="indexFireDash.html">
+                    <button class="bg-red-800 text-white p-3 w-full mb-5 rounded-lg hover:bg-red-900">Send fire SOS</button>
+                </a>
+
+                <a href="indexDash.html"><button class="bg-gray-900 text-white p-3 w-full rounded-lg hover:bg-gray-700">Go back</button></a>
+            </div>
+
+            <p class="text-red-600 text-sm">Triggered this by mistake? Cancel and stay on dashboard</p>
+        </div>
+    </section>
+
+    <!-- SCRIPT FOR MENU -->
+    <script>
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+</html>

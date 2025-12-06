@@ -1,0 +1,275 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>RescueLink</title>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- HEADER -->
+<header class="bg-red-800 p-3 text-white">
+    <nav class="max-w-6xl mx-auto">
+
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="indexDash.html" class="text-2xl font-bold tracking-tight">🚨 RescueLink</a>
+
+            <!-- Desktop menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="indexDash.html" class="hover:text-yellow-400">Dashboard</a>
+                <a href="indexProfile.html" class="hover:text-yellow-400">Profile</a>
+                <a href="indexContact.html" class="bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Contact</a>
+                <a href="indexSettings.html" class="hover:text-yellow-400">Settings</a>
+                <a href="indexLogout.html" class="hover:text-yellow-400">Logout</a>
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden flex-col space-y-3 mt-4 md:hidden bg-red-600 p-3 items-center rounded-lg">
+            <a href="indexDash.html" class="block text-white hover:text-yellow-400">Dashboard</a>
+            <a href="indexProfile.html" class="block text-white hover:text-yellow-400">Profile</a>
+            <a href="indexContact.html" class="block bg-red-900 rounded-lg p-1 px-3 hover:bg-yellow-400 hover:text-red-800">Contact</a>
+            <a href="indexSettings.html" class="block text-white hover:text-yellow-400">Settings</a>
+            <a href="indexLogout.html" class="block text-white hover:text-yellow-400">Logout</a>
+        </div>
+
+    </nav>
+</header>
+
+<!-- SECTION 1 -->
+<section class="bg-red-600 text-white items-center mt-5 mx-5 p-3 rounded-lg">
+    <div class="flex justify-between flex-wrap">
+        <p class="font-bold">Emergency contacts ready</p>
+        <p class="text-yellow-300">Your contacts will be notified</p>
+    </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="p-4 py-10">
+    <div>
+        <div class="bg-white rounded-lg p-7 shadow-lg ">
+            <p class="text-lg font-bold text-red-700">Emergency contacts</p>
+
+            <div class="flex flex-wrap text-sm items-center space-x-2 my-3">
+                <p>Trusted people we alert alongside responders. They receive your SOS type, live location, and status updates.</p>
+                <button class="bg-yellow-400 text-red-700 p-1 px-2 rounded-lg font-bold">Up to 5 contacts</button>
+            </div>
+
+            <div class="flex flex-col lg:flex-row justify-center mt-5 gap-5">
+
+                <!-- FORM 1 -->
+                <div class="p-3 shadow-xl border-t-2 border-red-200 rounded-lg w-full lg:w-1/2 ">
+                    <p class="mb-3 font-bold text-2xl text-red-700">Add new contact</p>
+
+                    <form>
+                        <label>Full name</label>
+                        <input type="text" required placeholder="e.g. Jamie Lee" class="w-full rounded-lg p-2 mt-2 outline-red-700 border-2">
+
+                        <br><br>
+                        <div class="flex justify-between text-sm">
+                            <label>Relationship</label>
+                            <p>Mobile number</p>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <input type="text" required placeholder="Partner, parent, friend…" class="w-full rounded-lg p-2 outline-red-700 border-2">
+                            <input type="tel" required placeholder="+1 555 000 1234" class="w-full rounded-lg p-2 outline-red-700 border-2">
+                        </div>
+
+                        <br>
+                        <div class="flex justify-between text-sm">
+                            <label>Email address</label>
+                            <p>Optional</p>
+                        </div>
+
+                        <input type="email" placeholder="name@example.com" class="w-full rounded-lg p-2 mt-2 outline-red-700 border-2">
+
+                        <br><br>
+                        <div class="flex justify-between text-sm">
+                            <label>Medical summary</label>
+                            <p>They’ll see a reduced version only</p>
+                        </div>
+
+                        <select class="w-full rounded-lg p-2 mt-2 outline-red-700 border-2">
+                            <option>Yes, share key medical info</option>
+                        </select>
+
+                        <p class="my-4 text-sm">Contacts never see your full medical file and can be removed at any time.</p>
+
+                        <p class="text-sm">We’ll send them a one-time SMS to confirm they agree to receive emergency alerts.</p>
+                        <button type="submit" id="save" class="bg-red-700 hover:bg-red-800 text-white p-1 px-3 rounded-lg mt-4 font-bold">Add contact</button>
+                    </form>
+                </div>
+
+                <!-- FORM 2 -->
+                <div class="p-5 shadow-lg rounded-lg w-full lg:w-1/2 border-t-2 border-red-200">
+                    <p class="mb-3 font-bold text-2xl text-red-700">Current contacts</p>
+
+                    <!-- Contact Cards -->
+                    <div class="shadow-lg rounded-lg p-5 bg-yellow-100 mb-2 border-l-4 border-red-700">
+                        <div class="flex items-center space-x-3">
+                            <p class="font-bold text-red-700">Jamie Lee</p>
+                            <p class="text-sm">Partner</p>
+                            <p class="bg-green-600 p-1 px-2 text-white rounded-lg">Confirmed</p>
+                        </div>
+                        <div class="flex justify-between mt-2 text-sm">
+                            <p>SMS • Push • Email · +1 555</p>
+                            <div class="space-x-2">
+                                <button id="later" class="bg-yellow-400 p-1 px-5 hover:bg-yellow-600 rounded-lg">Edit</button>
+                                <button id="coming" class="text-red-800 p-1 px-5 rounded-lg">Remove</button>
+                            </div>
+                        </div>
+                        <p class="text-sm">209 8831 · jamie.lee@example.com</p>
+                    </div>
+
+                    <div class="shadow-lg rounded-lg p-5 bg-yellow-100 mb-2 border-l-4 border-red-700">
+                        <div class="flex items-center space-x-3">
+                            <p class="font-bold text-red-700">Dad</p>
+                            <p class="text-sm text-gray-700">Parent</p>
+                            <p class="bg-yellow-500 p-1 px-2 hover:bg-yellow-600 rounded-lg text-sm">Invite sent</p>
+                        </div>
+                        <div class="flex justify-between text-sm mt-2">
+                            <p>SMS only · +44 7700 900321</p>
+                            <div class="space-x-2">
+                                <button id="later" class="bg-yellow-400 p-1 px-5 hover:bg-yellow-600 rounded-lg">Resend invite</button>
+                                <button id="coming" class="text-red-800 p-1 px-5 rounded-lg">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="shadow-lg rounded-lg p-5 bg-yellow-100 mb-2 border-l-4 border-red-700">
+                        <div class="flex items-center space-x-3">
+                            <p class="font-bold text-red-700">Building security</p>
+                            <p class="text-sm text-gray-700">Work</p>
+                        </div>
+                        <div class="flex justify-between text-sm mt-2">
+                            <p>Call only · +1 555 800 4100</p>
+                            <div class="space-x-2">
+                                <button id="later" class="bg-yellow-400 p-1 px-5 rounded-lg">Edit</button>
+                                <button id="coming" class="text-red-800 p-1 px-5 rounded-lg">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-5 border-red-700">
+                    <p class="text-sm">You can reorder contacts later. The first two are prioritized for early notifications.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- LAST SECTION -->
+<section class="p-5">
+    <div class="bg-white rounded-lg p-7 shadow-lg">
+        <p class="font-bold text-2xl text-red-700">Notification preferences</p>
+        <p class="text-gray-700 my-4">Choose how you and your contacts are notified when an SOS is triggered.</p>
+
+        <p>• You can turn channels off anytime</p>
+        <p class="mb-4">• We always try SMS first for contacts</p>
+
+        <p class="text-gray-700 mb-2">For you</p>
+
+        <p class="font-bold text-red-700">Push notifications</p>
+        <label class="flex items-center justify-between cursor-pointer">
+       <span class="mb-4 text-sm">Alerts on this device for status changes and responder updates.</span>
+        <div class="relative">
+       <input type="checkbox" checked class="sr-only peer">
+       <div class="w-14 h-7 bg-gray-300 rounded-full peer-checked:bg-red-700 transition"></div>
+        <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 transition"></div>
+       </div>
+       </label>
+
+        <p class="font-bold text-red-700">SMS backup</p>
+        <label class="flex items-center justify-between cursor-pointer">
+       <span class="mb-4 text-sm">If data is poor, we’ll send a minimal SMS with your SOS status.</span>
+        <div class="relative">
+       <input type="checkbox" checked class="sr-only peer">
+       <div class="w-14 h-7 bg-gray-300 rounded-full peer-checked:bg-red-700 transition"></div>
+        <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 transition"></div>
+       </div>
+       </label>
+
+        <p class="font-bold text-red-700">Email summaries</p>
+        <label class="flex items-center justify-between cursor-pointer">
+       <span class="mb-4 text-sm">Short summary after an incident is resolved.</span>
+        <div class="relative">
+       <input type="checkbox" class="sr-only peer">
+       <div class="w-14 h-7 bg-gray-300 rounded-full peer-checked:bg-red-700 transition"></div>
+        <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 transition"></div>
+       </div>
+       </label>
+        
+
+        <p class="font-bold mt-4 text-red-700">For your contacts</p>
+
+        <p class="font-bold text-red-700">SMS alerts</p>
+         <label class="flex items-center justify-between cursor-pointer">
+       <span class="mb-4 text-sm">Primary channel. Includes link to your live location.</span>
+        <div class="relative">
+       <input type="checkbox" checked class="sr-only peer">
+       <div class="w-14 h-7 bg-gray-300 rounded-full peer-checked:bg-red-700 transition"></div>
+        <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 transition"></div>
+       </div>
+       </label>
+
+        <p class="font-bold text-red-700">Email alerts</p>
+         <label class="flex items-center justify-between cursor-pointer">
+       <span class="mb-4 text-sm">Longer summary with timeline once responders are on site.</span>
+        <div class="relative">
+       <input type="checkbox" class="sr-only peer">
+       <div class="w-14 h-7 bg-gray-300 rounded-full peer-checked:bg-red-700 transition"></div>
+        <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 transition"></div>
+       </div>
+       </label>
+
+        <p class="font-bold text-red-700">Quiet hours</p>
+         <label class="flex items-center justify-between cursor-pointer">
+       <span class="mb-4 text-sm">Avoid non-critical updates between set times. SOS alerts still go through.</span>
+        <div class="relative">
+       <input type="checkbox" class="sr-only peer">
+       <div class="w-14 h-7 bg-gray-300 rounded-full peer-checked:bg-red-700 transition"></div>
+        <div class="absolute left-1 top-1 w-5 h-5 bg-white rounded-full peer-checked:translate-x-7 transition"></div>
+       </div>
+       </label>
+
+        <p class="font-bold mt-4 text-red-700">Best practice</p>
+        <p class="text-gray-700 text-sm mb-4">Pick 2–3 people who answer quickly and are comfortable acting in an emergency.</p>
+
+        <div class="space-x-3 space-y-4">
+            <button class="bg-yellow-400 text-red-700 px-3 py-1 rounded-lg">Mix home & work</button>
+            <button class="bg-yellow-400 text-red-700 px-3 py-1 rounded-lg">Explain how RescueLink works</button>
+            <button class="bg-yellow-400 text-red-700 px-3 py-1 rounded-lg">Review every 6–12 months</button>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-5">
+            <p class="text-sm">Changes apply to all new SOS alerts.<br>Existing active alerts keep their original notification settings.</p>
+
+            <div class="mt-4 md:mt-0 space-x-4 space-y-4">
+                <button id="later" class="bg-gray-200 p-2 hover:bg-gray-400 rounded-lg px-4">Discard changes</button>
+                <button id="save" class="bg-red-700 hover:bg-red-800 text-white p-2 rounded-lg px-4">Save preferences</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+const ham = document.getElementById("hamburger");
+const menu = document.getElementById("mobileMenu");
+ham.addEventListener("click", () => menu.classList.toggle("hidden"));
+</script>
+
+<script src="index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>RescueLink Sign Up</title>
+</head>
+<body class="bg-red-50">
+
+<!--  HEADER -->
+<header>
+  <nav class="bg-red-800 p-3 text-white">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="text-3xl font-bold text-white">🚨 RescueLink</a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-4">
+        <a href="indexLogin.html">
+          <button class="bg-red-900 text-white hover:text-black shadow-md px-5 py-2 rounded-lg hover:bg-yellow-300">Login</button>
+        </a>
+        <a href="indexSignUp.html">
+          <button class="bg-yellow-300 text-black shadow-md px-5 py-2 rounded-lg hover:bg-yellow-500">Sign Up</button>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden flex-col space-y-2 mt-2 px-2 md:hidden">
+      <a href="indexLogin.html" class="block border-1 text-white px-4 py-2 rounded-lg font-bold">Login</a>
+      <a href="indexSignUp.html" class="block bg-yellow-500 text-black px-4 py-2 rounded-lg font-bold">Sign Up</a>
+    </div>
+  </nav>
+</header>
+
+<!--  SIGNUP FORM  -->
+<section class="p-4 flex justify-center">
+  <div class="bg-white shadow-xl rounded-lg p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center text-red-900">Create your RescueLink account</h1>
+    <p class="text-center my-2 text-red-700">Set up your profile so you can trigger SOS in seconds when it matters.</p>
+
+    <div class="flex justify-center space-x-4 my-4">
+      <a href="indexLogin.html"><button class="shadow-md text-red-800 px-6 py-2 rounded-lg hover:bg-yellow-300">Login</button></a>
+      <a href="indexSignUp.html"><button class="bg-red-900 shadow-md text-white px-6 py-2 rounded-lg hover:bg-red-700">Sign Up</button></a>
+    </div>
+
+    <form class="space-y-4">
+      <div>
+        <label class="text-red-900">Name</label>
+        <input type="text" placeholder="James Osei" required class="w-full outline-1 rounded-lg p-2 mt-1 outline-red-300 ">
+      </div>
+      <div>
+        <label class="text-red-900">Email</label>
+        <input type="email" placeholder="James@gmail.com" required class="w-full outline-1 rounded-lg p-2 mt-1 outline-red-300 ">
+      </div>
+      <div>
+        <label class="text-red-900">Mobile Phone</label>
+        <input type="tel" placeholder="0555599996" required class="w-full outline-1 rounded-lg p-2 mt-1 outline-red-300 ">
+      </div>
+      <div>
+        <label class="text-red-900">Password</label>
+        <input type="password" placeholder="Your password" required class="w-full outline-1 rounded-lg p-2 mt-1 outline-red-300 ">
+      </div>
+      <p class="text-center text-sm text-red-700">I agree to the <span class="text-red-800 font-bold">terms of use</span> and <span class="text-red-800 font-bold">privacy policy</span>.</p>
+
+      <a href="indexDash.html">
+        <button type="submit" class="bg-red-800 hover:bg-red-700 text-white w-full py-2 mt-2 rounded-lg font-bold">Continue</button>
+      </a>
+    </form>
+
+    <div class="flex justify-between mt-4 text-sm text-red-700">
+      <p>Already have an account?</p>
+      <a href="indexLogin.html" class="text-yellow-600 font-bold">Log in instead</a>
+    </div>
+    <div class="flex justify-between mt-2 text-sm text-red-700">
+      <p>Forgot password?</p>
+      <a href="#" class="text-yellow-600 font-bold">Reset it</a>
+    </div>
+
+    <p class="mt-6 text-center text-xs text-red-500">Your phone and medical details are stored securely and only shared with responders and contacts during an active SOS.</p>
+  </div>
+</section>
+
+<!--  MOBILE MENU SCRIPT  -->
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>
+
+</body>
+</html>

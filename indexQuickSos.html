@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<title>Confirm SOS - RescueLink</title>
+</head>
+<body class="bg-gray-200">
+
+<!--  HEADER / NAVBAR  -->
+<header>
+  <nav class="bg-red-800 p-3 text-white">
+    <div class="flex justify-between items-center max-w-7xl mx-auto">
+      <a href="indexDash.html" class="text-2xl font-bold">🚨 RescueLink</a>
+      <div class="hidden md:flex space-x-4 items-center">
+        <a href="indexDash.html" class="hover:text-yellow-300">Dashboard</a>
+        <a href="indexProfile.html" class="hover:text-yellow-300">Profile</a>
+        <a href="indexContact.html" class="hover:text-yellow-300">Contact</a>
+        <a href="indexSettings.html" class="hover:text-yellow-300">Settings</a>
+        <a href="indexLogout.html" class="hover:text-yellow-300">Logout</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden flex-col space-y-2 mt-2 px-2 md:hidden">
+      <a href="indexDash.html" class="block hover:text-yellow-300">Dashboard</a>
+      <a href="indexProfile.html" class="block hover:text-yellow-300">Profile</a>
+      <a href="indexContact.html" class="block hover:text-yellow-300">Contact</a>
+      <a href="indexSettings.html" class="block hover:text-yellow-300">Settings</a>
+      <a href="indexLogout.html" class="block hover:text-yellow-300">Logout</a>
+    </div>
+  </nav>
+</header>
+
+<!--  HERO / STATUS  -->
+<section class="bg-white  p-4 mt-4 max-w-7xl mx-auto rounded-lg">
+  <div class="flex flex-col md:flex-row justify-between">
+    <p class="font-bold text-red-900">System status: Online</p>
+    <p class="text-red-700 text-sm mt-2 md:mt-0">Choose details for your Other emergency before sending SOS.</p>
+  </div>
+</section>
+
+<!--  SOS CONFIRMATION  -->
+<section class="my-8 max-w-7xl mx-auto px-4">
+  <div class="flex flex-col lg:flex-row gap-6">
+
+    <!-- Left Column -->
+    <div class="bg-white shadow-lg p-4 rounded-lg flex-1">
+      <p class="font-bold text-2xl mb-3 text-red-900">Confirm SOS</p>
+      <p class="text-red-700 text-sm mb-4">You’re about to send a general SOS. We’ll share your live location with nearby responders and your trusted contacts to get you help as fast as possible.</p>
+
+      <p class="bg-red-800 text-white p-1 text-sm my-4 rounded-lg inline-block">General SOS</p>
+
+      <div class="bg-red-700 p-4 rounded-full text-center text-white my-4 flex flex-col items-center justify-center">
+        <p class="text-red-200">Hold to send</p>
+        <p class="font-bold text-2xl mt-2">Send Other SOS</p>
+        <p class="text-sm text-red-200 mt-2">Long‑press on your phone to avoid accidental triggers</p>
+      </div>
+
+      <p class="mt-3 text-red-700 text-sm">If this was a mistake, use “Back to dashboard” below. Otherwise, confirm to notify responders immediately.</p>
+
+      <p class="my-3 text-red-700 text-sm">Add context (optional)</p>
+      <textarea placeholder="What kind of help do you need? Optional · 120 characters max
+
+e.g. “I feel unsafe walking home”, “Someone collapsed nearby”, “Serious car accident”, “Don’t know what’s happening, but need help”.
+
+Shared with responders and your trusted contacts." class="w-full h-40 p-3 rounded-lg border border-red-400"></textarea>
+
+      <!-- Buttons -->
+      <div class="text-center space-x-2 mt-4 flex flex-col md:flex-row justify-center gap-2">
+        <a href="indexDash.html"><button class="bg-yellow-400 hover:bg-yellow-700 hover:text-white text-black p-2 px-4 rounded-lg font-bold">Back to Dashboard</button></a>
+        <button class="bg-red-700 text-white p-2 px-4 hover:bg-red-500 rounded-lg">Send SOS</button>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="bg-white shadow-lg p-5 rounded-lg flex-1">
+      <p class="font-bold mb-3 text-red-900">Who will be notified</p>
+      <p class="text-red-700 text-sm mb-3">Your SOS is routed automatically based on your location and the details you share.</p>
+      <ul class="list-disc list-inside mb-3 text-red-700 text-sm">
+        <li>Local emergency services where available</li>
+        <li>Nearest RescueLink responder team</li>
+        <li>Your top trusted contacts</li>
+      </ul>
+
+      <div class="flex flex-wrap gap-2 my-3 text-sm">
+        <button class="bg-yellow-400 text-black px-3 py-1 rounded-lg">Jordan · Trusted contact</button>
+        <button class="bg-yellow-400 text-black px-3 py-1 rounded-lg">Family group</button>
+        <button class="bg-yellow-400 text-black px-3 py-1 rounded-lg">Local responder</button>
+      </div>
+
+      <p class="mt-5 font-semibold text-red-900">What responders see</p>
+      <ul class="list-disc list-inside text-sm mb-3 text-red-700">
+        <li>Your name and verified phone number</li>
+        <li>Your live GPS location and movement</li>
+        <li>Any medical info you chose to share in your profile</li>
+        <li>This short note, if you add one</li>
+      </ul>
+
+      <p class="my-4 text-2xl font-bold text-red-900">Data & privacy</p>
+      <p class="text-red-700 text-sm mb-3">Location and SOS details are encrypted in transit and only visible to verified responders and the contacts you select. We never share your data for advertising.</p>
+
+      <div class="flex flex-col md:flex-row justify-between items-center mt-5 bg-yellow-500 rounded-lg p-3 gap-2">
+        <p class="text-sm flex-1">Offline? We’ll queue your Other SOS and send it automatically once you’re back online.</p>
+        <button class="border px-4 py-2 rounded-lg text-red-800 text-sm font-bold">View offline behavior</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--  MOBILE MENU SCRIPT  -->
+<script>
+const btn = document.getElementById("menu-btn");
+const menu = document.getElementById("mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
+</script>
+
+</body>
+</html>
